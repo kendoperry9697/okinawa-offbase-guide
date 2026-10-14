@@ -1,0 +1,11 @@
+[build]
+  publish = "."
+  # Regenerates _redirects (/go/* affiliate links) from affiliates.json
+  command = "python3 scripts/build_redirects.py"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
